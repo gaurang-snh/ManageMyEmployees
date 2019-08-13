@@ -1,0 +1,146 @@
+<div class="container">
+  <h2>My Employees</h2>
+  <app-loader></app-loader>
+  <div *ngIf="user">
+    <h4>Hi {{ user.name }}</h4>
+    <h5 *ngIf="user.gender === 'female'; else male">
+      You are an admin because you are awesome. You can manage your employees'
+      personal details below. You can even fire an employee by deleting them.
+    </h5>
+    <ng-template #male>
+      <h5>
+        You can manage your employees' personal details below.
+      </h5>
+    </ng-template>
+
+    <mat-list role="list" *ngIf="employees">
+      <mat-list-item
+        role="listitem"
+        *ngFor="let employee of employees; let i = index"
+      >
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p class="name">{{ employee.name }}</p>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <form class="employee-form">
+              <mat-form-field class="full-width">
+                <input
+                  class="employee-input-{{ i }} employee-input"
+                  matInput
+                  placeholder="Name"
+                  value="{{ employee.name }}"
+                  disabled="true"
+                />
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <input
+                  class="employee-input-{{ i }} employee-input"
+                  matInput
+                  placeholder="Username"
+                  value="{{ employee.username }}"
+                  disabled="true"
+                />
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <input
+                  class="employee-input-{{ i }} employee-input"
+                  type="email"
+                  matInput
+                  placeholder="Email"
+                  value="{{ employee.email }}"
+                  disabled="true"
+                />
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <input
+                  class="employee-input-{{ i }} employee-input"
+                  matInput
+                  placeholder="Address Line 1"
+                  value="{{ employee.address.street }}"
+                  disabled="true"
+                />
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <input
+                  class="employee-input-{{ i }} employee-input"
+                  matInput
+                  placeholder="Address Line 2"
+                  value="{{ employee.address.suite }}"
+                  disabled="true"
+                />
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <input
+                  class="employee-input-{{ i }} employee-input"
+                  matInput
+                  placeholder="City"
+                  value="{{ employee.address.city }}"
+                  disabled="true"
+                />
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <input
+                  class="employee-input-{{ i }} employee-input"
+                  matInput
+                  placeholder="Zipcode"
+                  value="{{ employee.address.zipcode }}"
+                  disabled="true"
+                />
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <input
+                  class="employee-input-{{ i }} employee-input"
+                  matInput
+                  placeholder="Phone"
+                  value="{{ employee.phone }}"
+                  disabled="true"
+                />
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <input
+                  class="employee-input-{{ i }} employee-input"
+                  type="url"
+                  matInput
+                  placeholder="Website"
+                  value="{{ employee.website }}"
+                  disabled="true"
+                />
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <input
+                  class="employee-input-{{ i }} employee-input"
+                  matInput
+                  placeholder="Company"
+                  value="{{ employee.company.name }}"
+                  disabled="true"
+                />
+              </mat-form-field>
+            </form>
+
+            <button
+              mat-flat-button
+              color="primary"
+              id="edit-or-save-button-{{ i }}"
+              (click)="editOrSaveClicked(i)"
+            >
+              Edit
+            </button>
+
+            <button
+              mat-flat-button
+              color="warn"
+              id="delete-button-{{ i }}"
+              *ngIf="user.gender === 'female'"
+              (click)="deleteConfirm(i)"
+            >
+              Delete
+            </button>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

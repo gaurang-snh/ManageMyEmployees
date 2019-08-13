@@ -1,0 +1,44 @@
+div.container {
+  margin-bottom: 100px;
+}
+
+h5 {
+  text-align: justify;
+}
+
+div {
+  mat-list {
+    mat-list-item {
+      height: 100%;
+
+      mat-accordion {
+        width: 100%;
+
+        mat-expansion-panel {
+          //background: transparent;
+          //box-shadow: none;
+
+          button {
+            float: right;
+            margin: 10px;
+          }
+          mat-expansion-panel-header {
+            //background: none;
+          }
+
+          mat-form-field {
+            padding: 10px;
+
+            input.employee-input {
+              color: lightgray;
+            }
+
+            input {
+              all: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}

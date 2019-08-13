@@ -1,0 +1,24 @@
+.footer {
+  position: fixed;
+  height: 50px;
+  background-color: #282c37;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+  font-size: 10px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+  p {
+    float: right;
+    margin-top: 20px;
+    color: white;
+
+    a,
+    a:hover,
+    a:visited {
+      color: white;
+    }
+  }
+}

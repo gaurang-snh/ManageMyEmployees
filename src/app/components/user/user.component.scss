@@ -1,0 +1,40 @@
+section {
+  height: 100%;
+  width: 100%;
+}
+
+.xop-container {
+  display: grid;
+  height: 1000px;
+}
+
+.xop-left {
+  background: url(https://images.pexels.com/photos/1056552/pexels-photo-1056552.jpeg);
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  padding: 1rem;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+}
+
+.xop-right {
+  background: url(https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg);
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  padding: 1rem;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+}
+.xop-left:hover,
+.xop-right:hover {
+  transform: scale(0.95);
+}
+.xop-container h1 {
+  letter-spacing: 2px;
+  font-family: "Francois One", sans-serif;
+  font-size: 3rem;
+  color: white;
+  margin-top: 4em;
+}

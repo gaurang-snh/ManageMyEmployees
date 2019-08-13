@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Running demo
 
-http://managemyemployees.firebaseapp.com/list
+http://managemyemployees.firebaseapp.com/
 
 ## Development server
 
